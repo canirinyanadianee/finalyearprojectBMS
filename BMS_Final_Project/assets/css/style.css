@@ -1,0 +1,245 @@
+/* Blood Management System Styles */
+
+:root {
+    --primary-color: #dc3545;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --body-bg: #ffffff;
+    --body-color: #212529;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --primary-color: #ff6b6b;
+    --secondary-color: #adb5bd;
+    --body-bg: #1a1a1a;
+    --body-color: #ffffff;
+    --card-bg: #2d2d2d;
+    --border-color: #495057;
+}
+
+body {
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.table {
+    color: var(--body-color);
+}
+
+.table th,
+.table td {
+    border-color: var(--border-color);
+}
+
+/* Custom Components */
+.blood-type-badge {
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.blood-type-a-plus { background-color: #ff6b6b; color: white; }
+.blood-type-a-minus { background-color: #ff8e8e; color: white; }
+.blood-type-b-plus { background-color: #4ecdc4; color: white; }
+.blood-type-b-minus { background-color: #6ee7df; color: white; }
+.blood-type-ab-plus { background-color: #45b7d1; color: white; }
+.blood-type-ab-minus { background-color: #6bc5d8; color: white; }
+.blood-type-o-plus { background-color: #96ceb4; color: white; }
+.blood-type-o-minus { background-color: #b8e0c8; color: white; }
+
+.status-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-pending { background-color: var(--warning-color); color: #212529; }
+.status-approved { background-color: var(--success-color); color: white; }
+.status-rejected { background-color: var(--danger-color); color: white; }
+.status-completed { background-color: var(--info-color); color: white; }
+.status-cancelled { background-color: var(--secondary-color); color: white; }
+
+.inventory-status-low { background-color: var(--warning-color); color: #212529; }
+.inventory-status-normal { background-color: var(--success-color); color: white; }
+.inventory-status-urgent { background-color: var(--danger-color); color: white; }
+
+/* Dashboard Cards */
+.dashboard-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card .card-body {
+    padding: 1.5rem;
+}
+
+.dashboard-stat {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-label {
+    color: var(--secondary-color);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Login Page */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.login-body {
+    padding: 2rem;
+}
+
+/* Theme Toggle Button */
+#themeToggle {
+    border: none;
+    background: transparent;
+    color: inherit;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+#themeToggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-stat {
+        font-size: 1.5rem;
+    }
+    
+    .login-card {
+        margin: 1rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-color);
+}
+
+/* Form Styling */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* Alert Styling */
+.alert {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Table Styling */
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+/* Modal Styling */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Loading Spinner */
+.spinner-border {
+    color: var(--primary-color);
+} 
